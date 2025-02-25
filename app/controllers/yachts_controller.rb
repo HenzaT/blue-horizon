@@ -1,5 +1,5 @@
 class YachtsController < ApplicationController
   def show
-    @yacht = Yacht.all
+    @yacht = Yacht.find(params[:id])
   end
 end
