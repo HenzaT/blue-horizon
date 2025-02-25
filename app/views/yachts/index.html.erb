@@ -1,3 +1,17 @@
-<div class="container">
-  
+<div class="container text-center">
+  <h1>All Yachts</h1>
+  <div class="row">
+    <% @yachts.each do |yacht| %>
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= yacht.name %></h5>
+            <p class="card-text"><%= yacht.model %></p>
+            <a href="#" class="btn btn-primary">Rent</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
