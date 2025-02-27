@@ -7,4 +7,10 @@ class YachtsController < ApplicationController
   def new
     @yacht = Yacht.new
   end
+
+  private
+
+  def yacht_params
+    params.permit(:yacht).require(:name, :model, :size, :price, :description, :photo)
+  end
 end
