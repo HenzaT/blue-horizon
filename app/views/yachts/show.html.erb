@@ -2,7 +2,60 @@
 <p>Find me in app/views/yachts/show.html.erb</p> %>
 
 <div class="container">
-  <div>
-    <h1>Yatch Show Page</h1>
+  <div class="border-bottom">
+    <h1><%= @yacht.name%></h1>
   </div>
+
+  <div class="border-bottom">
+    <h1>IMAGES</h1>
+    <%# <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+
+  <div class="border-bottom">
+    <h5>Hosted by</h5>
+    <%= @user.email  %>
+  </div>
+
+  <div class="row justify-content-center my-2">
+    <div class="col-8">
+      <p>Yacht price:
+        £<%= @yacht.price%>
+      </p>
+    </div>
+    <div class="col-2">
+      <p>Yacht size:
+        <%= @yacht.size%>
+      </p>
+    </div>
+  </div>
+
+  <div class="border-bottom">
+    <div class="d-flex p-2 bd-highlight">
+      <p>Yacht name:
+        <%= @yacht.name%>
+      </p>
+    </div>
+
+      <p>Yacht model:
+        <%= @yacht.model%>
+      </p>
+
+      <p>Yacht description:
+        <%= @yacht.description%>
+      </p>
+  </div>
+
+  <div>
+    <h2>Book this yacht</h2>
+  </div>
+
+  <div>
+    <h3>Reviews</h3>
+  </div>
+
+  <div>
+    <%= link_to "Add your own Yacht", new_yacht_path, class: "btn btn-flat" %>
+  </div>
+
+
 </div>
