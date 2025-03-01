@@ -1,0 +1,10 @@
+<h1>Add a New Yacht</h1>
+ <%= simple_form_for @yacht do |f| %>
+    <%= f.input :name, placeholder: 'Serenity'%>
+    <%= f.input :model, placeholder: 'Dilbar' %>
+    <%= f.input :size, placeholder: '12' %>
+    <%= f.input :price, placeholder: '£800' %>
+    <%= f.input :description, placeholder: 'The Serenity Dilbar is a luxurious timepiece inspired by the Dilbar yacht, offering elegance and opulence with features like TV watching and spa-like amenities in a refined design.' %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn btn-flat' %>
+  <% end %>
