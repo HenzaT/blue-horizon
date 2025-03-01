@@ -30,23 +30,14 @@
         </ul>
     </div>
 
-    <div class="col-4">
-      <div class="card-product">
-        <div class= "input-group-append-colum">
-          <div class= "input-group-append-row mx-4 justify-content-center">
-            <button type="button" class="btn btn-secondary">Select Date</button>
-            <button type="button" class="btn btn-secondary mx-4">Guests</button>
-          </div>
-          <button type="button" class="btn btn-dark mx-4 my-2 justify-content-center">Check availlability</button>
-        </div>
-      </div>
+    <div>
+      <%= simple_form_for [@yacht, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit "Make a booking", class: "btn btn-primary" %>
+      <% end %>
     </div>
 
 
   </div>
-
-  <div>
-    <%= link_to "Add your own Yacht", new_yacht_path, class: "btn btn-flat" %>
-  </div>
-
 </div>
