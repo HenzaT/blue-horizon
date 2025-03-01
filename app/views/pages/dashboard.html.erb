@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Your Yachts</h1>
   <div class="row g-5">
-    <% if current_user.yachts %>
+    <% if current_user.yachts.length > 0 %>
       <% current_user.yachts.each do |yacht| %>
       <%# <%= link_to yacht_path(yacht), class: "text-decoration-none text-black" do %>
         <div class="card" style="width: 18rem;">
