@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage-banner">
+  <h1>Blue Horizon - Luxury Yacht Rentals</h1>
+  <p>Welcome Home! Book your dream yacht today!</p>
+</div>
+
+<div class="yachts-container">
+  <% @featured_yachts.each do |yacht| %>
+    <div class="yacht-card">
+      <img src="<%= yacht.image %>" alt="<%= yacht.name %>">
+      <h2><%= yacht.name %></h2>
+      <p>Price per booking length: $<%= yacht.price_per_booking_length %></p>
+      <p>Status: <%= yacht.available ? "Available" : "Booked" %></p>
+      <a href="#">View Details</a>
+    </div>
+  <% end %>
+</div>
