@@ -1,11 +1,12 @@
 <div class="container">
-  <div class="border-bottom">
-    <h1><%= @yacht.name%></h1>
-  </div>
-
-  <div class="border-bottom">
-    <h1>IMAGES</h1>
-    <%= cl_image_tag @yacht.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="card-category" style="background-image:
+    url(<%= cl_image_path(@yacht.photo.key) %>),
+    url(<%= cl_image_path(@yacht.photo.key) %>),
+    url(<%= cl_image_path(@yacht.photo.key) %>);
+    background-position: left top, 60%, right top;
+    background-size: 45% 100%, 25% 100%, 30% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    height: 400px;">
   </div>
 
   <div class="border-bottom">
@@ -13,46 +14,39 @@
     <%= @user.email  %>
   </div>
 
-  <div class="row justify-content-center my-2">
-    <div class="col-8">
-      <p>Yacht price:
-        £<%= @yacht.price%>
-      </p>
-    </div>
-    <div class="col-2">
-      <p>Yacht size:
-        <%= @yacht.size%>
-      </p>
-    </div>
-  </div>
-
-  <div class="border-bottom">
-    <div class="d-flex p-2 bd-highlight">
-      <p>Yacht name:
-        <%= @yacht.name%>
-      </p>
-    </div>
-
-      <p>Yacht model:
-        <%= @yacht.model%>
-      </p>
-
+  <div class="row">
+    <div class="col-4">
       <p>Yacht description:
         <%= @yacht.description%>
       </p>
-  </div>
+    </div>
 
-  <div>
-    <h2>Book this yacht</h2>
-  </div>
+    <div  class="col-4">
+      <h3>Key Features:</h3>
+        <ul>
+          <li><%= @yacht.name%></li>
+          <li><%= @yacht.model%></li>
+          <li><%= @yacht.size%></li>
+        </ul>
+    </div>
 
-  <div>
-    <h3>Reviews</h3>
+    <div class="col-4">
+      <div class="card-product">
+        <div class= "input-group-append-colum">
+          <div class= "input-group-append-row mx-4 justify-content-center">
+            <button type="button" class="btn btn-secondary">Select Date</button>
+            <button type="button" class="btn btn-secondary mx-4">Guests</button>
+          </div>
+          <button type="button" class="btn btn-dark mx-4 my-2 justify-content-center">Check availlability</button>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
   <div>
     <%= link_to "Add your own Yacht", new_yacht_path, class: "btn btn-flat" %>
   </div>
-
 
 </div>
