@@ -1,4 +1,5 @@
-.new-yacht-form input::placeholder {
+.new-yacht-form input::placeholder,
+.new-yacht-form textarea::placeholder  {
   color: #6c757d;
   opacity: 0.5;
 }
