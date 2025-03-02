@@ -6,6 +6,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user_bookings = Booking.where(user_id: current_user.id)
   end
-  
 end
