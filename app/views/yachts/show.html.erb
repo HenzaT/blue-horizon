@@ -11,14 +11,15 @@
 
   <div class="border-bottom">
     <h5>Hosted by</h5>
-    <%= @user.name  %>
+    <%= @user.name.capitalize  %>
   </div>
 
   <div class="row">
     <div class="col-4">
-      <p>Yacht description:
+      <p>Description:
         <%= @yacht.description%>
       </p>
+      <p>Price: £<%= @yacht.price%> per day</p>
     </div>
 
     <div  class="col-4">
