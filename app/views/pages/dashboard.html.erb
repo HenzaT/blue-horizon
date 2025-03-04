@@ -1,5 +1,5 @@
 <div class="mx-5">
-  <h1>Welcome back, <%= current_user.name %></h1>
+  <h1>Welcome back, <%= current_user.name.capitalize %></h1>
 </div>
 
 <div class="container border-bottom" id="your-yachts">
@@ -40,9 +40,12 @@
             <div class="card" style="width: 18rem;">
               <div class="card-body align-items-center">
                 <h2>Your stay on: </h2>
-                <h2>
-                  <strong><%= booking.yacht.name %></strong>
-                </h2>
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                  <h2>
+                    <strong><%= booking.yacht.name %></strong>
+                  </h2>
+                  <p class="mb-0">£<%= booking.price %></p>
+                </div>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="d-flex flex-column">
                     <div><h5 class="card-title">Check-in: </h5></div>
