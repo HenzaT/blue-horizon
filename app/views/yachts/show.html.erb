@@ -14,31 +14,30 @@
     <%= @user.name.capitalize  %>
   </div>
 
-  <div class="row">
-    <div class="col-4">
-      <p>Description:
-        <%= @yacht.description%>
-      </p>
-      <p>Price: £<%= @yacht.price%> per day</p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center"><%= @yacht.name %></h1>
+        <p><%= @yacht.description%></p>
+        <p>Price: £<%= @yacht.price%> per day</p>
+      </div>
+
+      <div  class="col">
+        <h3>Key Features:</h3>
+          <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fa-solid fa-check"></i></span><%= @yacht.name%></li>
+            <li><span class="fa-li"><i class="fa-solid fa-check"></i></span><%= @yacht.model%></li>
+            <li><span class="fa-li"><i class="fa-solid fa-check"></i></span><%= @yacht.size%></li>
+          </ul>
+      </div>
+
+      <div class="col">
+        <%= simple_form_for [@yacht, @booking] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit "Make a booking", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
-
-    <div  class="col-4">
-      <h3>Key Features:</h3>
-        <ul>
-          <li><%= @yacht.name%></li>
-          <li><%= @yacht.model%></li>
-          <li><%= @yacht.size%></li>
-        </ul>
-    </div>
-
-    <div>
-      <%= simple_form_for [@yacht, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.submit "Make a booking", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-
-
   </div>
 </div>
