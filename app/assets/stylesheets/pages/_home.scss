@@ -1,1 +1,9 @@
-// Specific CSS for your home-page
+// Import your components CSS files here.
+@import "navbar";
+@import "card";
+@import "footer";
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
