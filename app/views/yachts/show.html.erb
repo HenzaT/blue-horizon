@@ -11,34 +11,45 @@
 
   <div class="border-bottom">
     <h5>Hosted by</h5>
-    <%= @user.name.capitalize  %>
+    <%= @yacht.user.name.titleize  %>
   </div>
 
-  <div class="row">
-    <div class="col-4">
-      <p>Description:
-        <%= @yacht.description%>
-      </p>
-      <p>Price: £<%= @yacht.price%> per day</p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="grape-nuts-font text-center"><%= @yacht.name %></h1>
+        <p><%= @yacht.description%></p>
+      </div>
+
+      <div  class="col">
+        <h3 class="grape-nuts-font text-center text-align-center justify-content-center my-3">Key Information:</h3>
+          <ul class="fa-ul" style="display:inline-block;vertical-align:middle;">
+            <li><span class="fa-li"><i class="fa-solid fa-check"></i></span><i><strong><%= @yacht.model%></strong></i> model</li>
+            <li><span class="fa-li"><i class="fa-solid fa-check"></i></span>For: <strong><%= @yacht.size%></strong> people</li>
+            <li><span class="fa-li"><i class="fa-solid fa-check"></i></span>Price per day: <strong>£<%= @yacht.price%></strong></li>
+          </ul>
+      </div>
+
+      <div class="col">
+        <div class="p-4 my-4 border rounded-4" id="showpage-booking-card">
+          <h2 class="grape-nuts-font text-center">Book this Yacht</h2>
+          <%= simple_form_for [@yacht, @booking] do |f| %>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <%= f.input :start_date, required: true, label: false, placeholder: 'Start Date',
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+              <%= f.input :end_date, required: true, label: false, placeholder: 'End Date',
+                  as: :string,
+                  input_html: { data: { controller: "datepicker" } } %>
+            </div>
+            <div class="d-grid gap-2">
+            <%# if input.empty? %>
+              <%= f.submit "Make a booking", class: "btn text-light rounded-4", id: "showpage-button"  %>
+            <%# end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-
-    <div  class="col-4">
-      <h3>Key Features:</h3>
-        <ul>
-          <li><%= @yacht.name%></li>
-          <li><%= @yacht.model%></li>
-          <li><%= @yacht.size%></li>
-        </ul>
-    </div>
-
-    <div>
-      <%= simple_form_for [@yacht, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.submit "Make a booking", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-
-
   </div>
 </div>

@@ -3,7 +3,7 @@
     <div class="col">
       <div class="p-5">
         <h1 class="grape-nuts-font">Welcome,</h1>
-        <h1 class="grape-nuts-font"><%= current_user.name.capitalize %></h1>
+        <h1 class="grape-nuts-font"><%= current_user.name.titleize %></h1>
       </div>
     </div>
 
@@ -22,7 +22,7 @@
                       <%= cl_image_tag(yacht.photo.key, class:"card-img-top rounded-top-4") %>
                     <% end %>
                       <div class="card-body d-flex flex-row justify-content-between align-items-center">
-                          <h5 class="card-title mb-0"><%= yacht.name.capitalize %></h5>
+                          <h5 class="card-title mb-0"><%= yacht.name.titleize %></h5>
                           <div>
                             <h6 class="mb-0">£<%= yacht.price %></h6>
                             <p class="mb-0">per day</p>
@@ -55,7 +55,7 @@
                           <%= cl_image_tag(booking.yacht.photo.key, class:"card-img-top rounded-4") %>
                         <% end %>
                         <h5 class="text-center pt-2">
-                          <%= booking.yacht.name.capitalize %>
+                          <%= booking.yacht.name.titleize %>
                         </h5>
                       </div>
 
