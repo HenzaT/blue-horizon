@@ -18,3 +18,10 @@
   font-weight: 400;
   font-style: regular;
 }
+
+.home-container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
