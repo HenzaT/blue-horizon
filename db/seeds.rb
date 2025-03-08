@@ -81,5 +81,4 @@ celestial_breeze.user = ldicaprio
 celestial_breeze.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 celestial_breeze.save!
 
-
 puts "yachts added!"
