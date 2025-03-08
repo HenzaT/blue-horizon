@@ -8,7 +8,7 @@
     </div>
 
 
-    <div class="col">
+    <div class="col mb-3">
       <div class="container dashboard-section-background px-4 rounded-5 d-flex flex-column justify-content-center">
         <div class="section-header-background text-center rounded-4 mt-4 mb-3">
           <h3 class="m-0 grape-nuts-font">Your Yachts</h3>
@@ -17,9 +17,9 @@
           <% if current_user.yachts.length > 0 %>
             <% current_user.yachts.each do |yacht| %>
                 <%= link_to yacht_path(yacht), class: "text-decoration-none text-black d-flex justify-content-center" do %>
-                  <div class="card rounded-4 mb-4" >
+                  <div class="card rounded-4 mb-4">
                     <% if yacht.photo.attached? %>
-                      <%= cl_image_tag(yacht.photo.key, class:"card-img-top rounded-top-4") %>
+                      <%= cl_image_tag(yacht.photo.key, class:"card-img-top rounded-top-4", style:"width: 300px; height: 200px;") %>
                     <% end %>
                       <div class="card-body d-flex flex-row justify-content-between align-items-center">
                           <div>
@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <div class="col">
+    <div class="col mb-3">
       <div class="container dashboard-section-background px-4 rounded-5 d-flex flex-column justify-content-center">
         <div class="section-header-background text-center rounded-4 mt-4 mb-3">
           <h3 class="m-0 grape-nuts-font">Your Bookings</h3>
@@ -52,7 +52,7 @@
               <div class="d-flex flex-row justify-content-center">
                 <div class="card mb-4 rounded-5">
                   <div class="card-body">
-                    <div class="d-flex flex-row justify-content-between align-items-center">
+                    <div class="d-flex flex-row justify-content-between align-items-center" style="width: 335px; height: 205px;">
                       <div class="img-name w-50">
                         <% if booking.yacht.photo.attached? %>
                           <%= cl_image_tag(booking.yacht.photo.key, class:"card-img-top rounded-4") %>
