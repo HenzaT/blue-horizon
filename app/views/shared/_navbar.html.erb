@@ -1,8 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <div class="">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon py-2">
+  <div class="container">
+    <div>
       <%= link_to root_path, class: "navbar-brand d-flex flex-row m-0" do %>
-        <%= image_tag "blue-horizon-logo.png", class: "p-0 mx-2", style: "height: 50px; width: 50px;" %>
+        <%= image_tag "logo.png", class: "p-0 mx-2", style: "height: 50px; width: 50px; border-radius: 50%;" %>
         <h2 class="grape-nuts-font d-flex align-items-center m-0">Blue Horizon</h2>
       <% end %>
     </div>
@@ -31,7 +31,7 @@
 
         <% if user_signed_in? %>
           <li class="nav-item dropdown d-flex align-items-center">
-          <button class="rounded-3 d-none d-sm-block" type="button" data-bs-toggle="dropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="nav-button rounded-3 d-none d-sm-block" type="button" data-bs-toggle="dropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
             <div class="dropdown-menu dropdown-menu-end navbar-expand-sm" aria-labelledby="navbarDropdown">
