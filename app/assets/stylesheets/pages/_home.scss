@@ -1,9 +1,27 @@
-// Import your components CSS files here.
-@import "navbar";
-@import "card";
-@import "footer";
 
 .card-img-top {
   height: 200px;
   object-fit: cover;
+}
+
+#title {
+  font-family: "Grape Nuts", cursive;
+  font-weight: 400;
+  font-style: regular;
+  padding: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+
+#yacht_home {
+  font-family: "Grape Nuts", cursive;
+  font-weight: 400;
+  font-style: regular;
+}
+
+
+.card-category {
+  height: auto;
+  max-width: 100%;
 }
