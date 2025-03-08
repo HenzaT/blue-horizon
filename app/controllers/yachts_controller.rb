@@ -7,8 +7,8 @@ class YachtsController < ApplicationController
 
   def show
     @yacht = Yacht.find(params[:id])
+    # @user = @yacht.user
     @booking = Booking.new
-    @user = @yacht.user
   end
 
   def new

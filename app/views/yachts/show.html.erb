@@ -11,7 +11,7 @@
 
   <div class="border-bottom">
     <h5>Hosted by</h5>
-    <%= @user.name.capitalize  %>
+    <%= @yacht.user.name.titleize  %>
   </div>
 
   <div class="container">
@@ -35,15 +35,17 @@
           <h2 class="grape-nuts-font text-center">Book this Yacht</h2>
           <%= simple_form_for [@yacht, @booking] do |f| %>
             <div class="btn-group" role="group" aria-label="Basic example">
-              <%= f.input :start_date, label: false, placeholder: 'Start Date',
+              <%= f.input :start_date, required: true, label: false, placeholder: 'Start Date',
                 as: :string,
                 input_html: { data: { controller: "datepicker" } } %>
-              <%= f.input :end_date, label: false, placeholder: 'End Date',
+              <%= f.input :end_date, required: true, label: false, placeholder: 'End Date',
                   as: :string,
                   input_html: { data: { controller: "datepicker" } } %>
             </div>
             <div class="d-grid gap-2">
-              <%= f.submit "Make a booking", class: "btn text-light rounded-4", id: "showpage-button" %>
+            <%# if input.empty? %>
+              <%= f.submit "Make a booking", class: "btn text-light rounded-4", id: "showpage-button"  %>
+            <%# end %>
             </div>
           <% end %>
         </div>
