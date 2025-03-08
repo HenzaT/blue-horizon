@@ -4,7 +4,7 @@
 </div>
 
 <div class="yachts-container">
-  <% @yachts.each do |yacht| %>
+  <% @threeYachts.each do |yacht| %>
     <div class="yacht-card">
     <% if yacht.photo.attached? %>
       <%= cl_image_tag(yacht.photo.key, class:"card-img-top") %>
@@ -13,4 +13,11 @@
       <a href="#">View Details</a>
     </div>
   <% end %>
+</div>
+
+<div class="container d-flex flex-row justify-content-center align-items-center">
+  <div class="rounded-4" style="width: 75%; height: 400px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
