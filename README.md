@@ -9,5 +9,6 @@ This was my first group project at Le Wagon utilising Ruby on Rails.
 - Bootstrap
 - Git
 - Github
+- PostgreSQL
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
