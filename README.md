@@ -1,3 +1,4 @@
+## Title
 Le Wagon Rails Group Project
 
 This was my first group project at Le Wagon utilising Ruby on Rails. 
